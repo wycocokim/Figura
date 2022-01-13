@@ -7,18 +7,20 @@ import "react-datepicker/dist/react-datepicker.css";
 
 const Appointment = () => {
   const [startDate, setStartDate] = useState(new Date());
-  const [listOfUsers, setListOfUsers] = useState([]);
+  // const [listOfUsers, setListOfUsers] = useState([]);
+  let users = [];
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState(0);
-  const [status, setStatus] = useState("Pending");
+  // const [status, setStatus] = useState("Pending");
+  const status = "Pending";
 
   // console.log(startDate);
 
   useEffect(() => {
     Axios.get("https://figura-website.herokuapp.com/getDates")
       .then((response) => {
-        setListOfUsers(response.data);
+        users.push(response.data);
       })
       .catch((error) => {
         console.log(error);

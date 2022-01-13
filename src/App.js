@@ -1,12 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
 import Navbar from "./components/navbar/Navbar";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/pages/Home";
 import About from "./components/pages/About";
 import HowItWorks from "./components/pages/HowItWorks";
