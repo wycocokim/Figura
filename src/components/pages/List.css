@@ -1,0 +1,18 @@
+.list-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  padding: 6px 12px;
+}
+
+.list-a {
+  margin-top: 36px;
+}

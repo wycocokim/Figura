@@ -1,0 +1,117 @@
+nav {
+  background: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.nav-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  position: relative;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.fas {
+  cursor: pointer;
+}
+
+.menu-icon .fa-times {
+  transform: rotate(360deg);
+  transition: all 0.2s ease-out;
+}
+
+.menu-icon .fa-bars {
+  transform: rotate(180deg);
+  transition: all 0.2s ease-out;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.menu-list {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-list li a {
+  text-decoration: none;
+  color: black;
+  padding: 5px 10px;
+  margin-left: 20px;
+  font-size: 18px;
+}
+
+.menu-list li:last-child a {
+  padding: 5px 10px;
+  background-color: white;
+  transition: all 0.3s ease-out;
+  margin-left: 20px;
+  border-radius: 2px;
+  border: 1px solid black;
+}
+
+.menu-list li a:hover,
+.menu-list li a.active {
+  background-color: black;
+  color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease-out;
+}
+
+@media screen and (max-width: 800px) {
+  .logo {
+  }
+  .menu-list li a {
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .menu-icon {
+    display: block;
+  }
+  .menu-list {
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    background-color: white;
+    padding: 20px;
+    right: 0;
+    top: 64px;
+    transition: all 0.3s ease-out;
+  }
+
+  .menu-list li {
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .menu-list li:last-child {
+    margin-bottom: 0px;
+  }
+
+  .menu-list li a,
+  .menu-list li:last-child a {
+    width: 120px;
+    display: block;
+    margin: auto;
+  }
+
+  .menu-list.close {
+    right: -100%;
+    transition: all 0.3s ease-out;
+  }
+}

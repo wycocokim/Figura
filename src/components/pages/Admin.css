@@ -1,0 +1,47 @@
+.delete-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin-input-wrapper {
+  display: flex;
+  margin-bottom: 36px;
+}
+
+.admin-input {
+  margin-bottom: 0;
+  margin-right: 12px;
+}
+
+select {
+}
+
+.log-out-btn {
+  padding: 4px 8px;
+  margin-left: 16px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-color: white;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.admin-login {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.hidden {
+  display: none;
+}
