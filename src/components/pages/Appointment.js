@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Appointment.css";
 import DatePicker from "react-datepicker";
 import Axios from "axios";
@@ -8,7 +8,7 @@ import "react-datepicker/dist/react-datepicker.css";
 const Appointment = () => {
   const [startDate, setStartDate] = useState(new Date());
   // const [listOfUsers, setListOfUsers] = useState([]);
-  let users = [];
+  // let users = [];
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState(0);
@@ -17,15 +17,15 @@ const Appointment = () => {
 
   // console.log(startDate);
 
-  useEffect(() => {
-    Axios.get("https://figura-website.herokuapp.com/getDates")
-      .then((response) => {
-        users.push(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   Axios.get("https://figura-website.herokuapp.com/getDates")
+  //     .then((response) => {
+  //       users.push(response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }, []);
 
   const createUser = () => {
     Axios.post("https://figura-website.herokuapp.com/createUser/", {
