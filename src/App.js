@@ -9,6 +9,7 @@ import Appointment from "./components/pages/Appointment";
 import Status from "./components/pages/Status";
 import Admin from "./components/pages/Admin";
 import List from "./components/pages/List";
+import TableList from "./Table";
 
 function App() {
   // const [auth, setAuth] = useState(null);
@@ -25,6 +26,7 @@ function App() {
           <Route path="/status" element={<Status />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/list" element={<List />} />
+          <Route path="/table" element={<TableList />} />
         </Routes>
       </Router>
     </div>

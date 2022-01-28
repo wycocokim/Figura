@@ -44,7 +44,9 @@ table {
 
 .fas.fa-times.x-icon {
   position: absolute;
-  top: -20px;
-  right: 0;
+  top: 30px;
+  right: 30px;
   color: white;
+
+  z-index: 1000;
 }

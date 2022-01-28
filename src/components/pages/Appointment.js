@@ -12,6 +12,7 @@ const Appointment = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState(0);
+  const fullname = firstName + " " + lastName;
   // const [status, setStatus] = useState("Pending");
   const status = "Pending";
 
@@ -26,11 +27,25 @@ const Appointment = () => {
   //       console.log(error);
   //     });
   // }, []);
+  var today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth() + 1; //January is 0!
+  var yyyy = today.getFullYear();
+
+  if (dd < 10) {
+    dd = "0" + dd;
+  }
+
+  if (mm < 10) {
+    mm = "0" + mm;
+  }
+
+  today = yyyy + "-" + mm + "-" + dd;
+  // document.getElementById("datefield").setAttribute("max", today);
 
   const createUser = () => {
     Axios.post("https://figura-website.herokuapp.com/createUser/", {
-      first_name: firstName,
-      last_name: lastName,
+      full_name: fullname,
       phone: phone,
       booking_date: startDate,
       status: status,
@@ -42,6 +57,8 @@ const Appointment = () => {
         console.log(error);
       });
   };
+
+  console.log(startDate);
 
   return (
     <section>
@@ -88,10 +105,17 @@ const Appointment = () => {
             <div className="input-container">
               <label>Pick Date</label>
               <div className="date-container">
-                <DatePicker
+                {/* <DatePicker
                   selected={startDate}
                   onChange={(date) => setStartDate(date)}
                   minDate={new Date()}
+                /> */}
+                <input
+                  type="date"
+                  min={today}
+                  onChange={(event) => {
+                    setStartDate(event.target.value);
+                  }}
                 />
               </div>
             </div>
