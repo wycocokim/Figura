@@ -103,8 +103,8 @@ const TableList = () => {
           value: "Done",
         },
         {
-          text: "Cancel",
-          value: "Cancel",
+          text: "Canceled",
+          value: "Canceled",
         },
         {
           text: "Appointment has been set",
@@ -121,6 +121,10 @@ const TableList = () => {
         {
           text: "Ready for pickup",
           value: "Ready for pickup",
+        },
+        {
+          text: "Ready for fitting",
+          value: "Ready for fitting",
         },
       ],
       filteredValue: filteredInfo.status || null,

@@ -136,8 +136,9 @@ const ModalUpdate = ({ user, index }) => {
                     </option>
                     <option value="Tailoring">Tailoring</option>
                     <option value="Ready for fitting">Ready for fitting</option>
-                    <option value="Ready for pick up">Ready for pick up</option>
+                    <option value="Ready for pickup">Ready for pickup</option>
                     <option value="Done">Done</option>
+                    <option value="Canceled">Cancel</option>
                   </select>
                 </td>
                 <td>
