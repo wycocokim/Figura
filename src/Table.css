@@ -59,3 +59,30 @@
     display: none !important;
   }
 }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  background-color: white;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.admin-login {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+input {
+  margin-bottom: 8px;
+}
+
+.hidden {
+  display: none;
+}

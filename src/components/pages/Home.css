@@ -26,6 +26,36 @@
   margin-bottom: 100px;
 }
 
+.grid-2-col {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.overlay-gallery {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.753);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: ease 200ms;
+}
+
+.overlay-gallery:hover {
+  opacity: 100;
+}
+
+.gallery-text {
+  font-size: 20px;
+}
+
 .about-section {
   padding: 64px 0;
   display: flex;
@@ -40,6 +70,10 @@
   justify-content: center;
   align-items: flex-start;
   padding-bottom: 45px;
+}
+
+.hero-btn-home {
+  color: black !important;
 }
 
 img {

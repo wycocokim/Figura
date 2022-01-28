@@ -16,6 +16,11 @@
 .input-container {
   display: flex;
   flex-direction: column;
+  margin-top: 16px;
+}
+
+label {
+  margin-bottom: 8px;
 }
 
 .form {
@@ -36,6 +41,10 @@ input {
 button {
   width: fit-content;
   margin-top: 12px;
+}
+
+.appointment-btn {
+  margin-top: 24px;
 }
 
 @media screen and (max-width: 1250px) {

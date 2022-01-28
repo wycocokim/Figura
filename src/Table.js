@@ -14,10 +14,24 @@ const TableList = () => {
     sortedInfo: null,
   });
 
+  const [login, setLogin] = useState("");
+  const [password, setPassword] = useState("");
+  const [hide, setHide] = useState(false);
+
   const componentRef = useRef();
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
   });
+
+  const logIn = () => {
+    if (login === "admin" && password === "adminadmin") {
+      setHide(true);
+    }
+  };
+
+  // const logOut = () => {
+  //   setHide(false);
+  // };
 
   const clearFilters = () => {
     setHandleFilter({ filteredInfo: null });
@@ -29,6 +43,17 @@ const TableList = () => {
   filteredInfo = filteredInfo || {};
 
   console.log(listOfUsers);
+
+  useEffect(() => {
+    const myState = localStorage.getItem("my-state");
+    if (myState) {
+      setHide(JSON.parse(myState));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("my-state", JSON.stringify(hide));
+  });
 
   useEffect(() => {
     axios
@@ -167,52 +192,77 @@ const TableList = () => {
   };
 
   return (
-    <div className="table-container">
-      <div
-        className="table-container table-wrapper"
-        style={{ marginTop: "200px" }}
-      >
-        <div className="table-bar-header">
-          <button onClick={handlePrint} className="print__button">
-            {" "}
-            Print{" "}
-          </button>
+    <section>
+      <div className="table-container">
+        <div
+          className="table-container table-wrapper"
+          style={{ marginTop: "200px" }}
+        >
+          <div className="table-bar-header">
+            <button onClick={handlePrint} className="print__button">
+              {" "}
+              Print{" "}
+            </button>
 
-          <div className="filter-container">
-            <input
-              className="search-filter"
-              placeholder="search"
-              onChange={(e) => handleNameChange(e)}
-            />
-            <div className="filter-date-wrapper">
+            <div className="filter-container">
               <input
-                value={dateFrom}
-                type="date"
-                id="endDate"
-                onChange={(e) => setDateFrom(e.target.value)}
+                className="search-filter"
+                placeholder="search"
+                onChange={(e) => handleNameChange(e)}
               />
+              <div className="filter-date-wrapper">
+                <input
+                  value={dateFrom}
+                  type="date"
+                  id="endDate"
+                  onChange={(e) => setDateFrom(e.target.value)}
+                />
 
-              <input
-                type="date"
-                value={dateTo}
-                onChange={(e) => setDateTo(e.target.value)}
-              />
+                <input
+                  type="date"
+                  value={dateTo}
+                  onChange={(e) => setDateTo(e.target.value)}
+                />
 
-              <button onClick={dateFilter}> filter date </button>
+                <button onClick={dateFilter}> filter date </button>
+              </div>
             </div>
+            <Button onClick={clearFilters} className="clear-filters">
+              Clear filters
+            </Button>
           </div>
-          <Button onClick={clearFilters} className="clear-filters">
-            Clear filters
-          </Button>
+          <Table
+            ref={componentRef}
+            columns={columns}
+            dataSource={dataFilter}
+            onChange={onChange}
+          />
         </div>
-        <Table
-          ref={componentRef}
-          columns={columns}
-          dataSource={dataFilter}
-          onChange={onChange}
-        />
       </div>
-    </div>
+      <div className={`overlay ${hide ? "hidden" : ""}`}>
+        <div>
+          <h2 className="admin-login">Admin Login</h2>
+          <input
+            type="text"
+            name="login"
+            placeholder="username"
+            onChange={(event) => {
+              setLogin(event.target.value);
+            }}
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="password"
+            onChange={(event) => {
+              setPassword(event.target.value);
+            }}
+          />
+
+          <button onClick={logIn}>login</button>
+        </div>
+      </div>
+    </section>
   );
 };
 

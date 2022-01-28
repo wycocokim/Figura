@@ -25,7 +25,7 @@ const Home = () => {
                 the creative force behind the much-loved couture atelier Figura
                 Haute Couture.
               </p>
-              <a href="/appointment">
+              <a href="/appointment" className="hero-btn-home">
                 <button>Contact us</button>
               </a>
             </div>
@@ -42,27 +42,75 @@ const Home = () => {
         <div className="home-grid2">
           <div className="grid-2-col">
             <img src={img1} alt="hero-img" />
+            <div className="overlay-gallery">
+              <h3 className="gallery-text">Design by: Romel Baoayan</h3>
+
+              <h3>Characteristics: soft, airy, warm</h3>
+              <h3>Fabric: cashmere</h3>
+            </div>
           </div>
           <div className="grid-2-col">
             <img src={img2} alt="hero-img" />
+            <div className="overlay-gallery">
+              <h3 className="gallery-text">Design by: Romel Baoayan</h3>
+
+              <h3>Characteristics: warm, lightweight</h3>
+              <h3>Fabric: cotton tulle</h3>
+            </div>
           </div>
           <div className="grid-2-col">
             <img src={img3} alt="hero-img" />
+            <div className="overlay-gallery">
+              <h3 className="gallery-text">Design by: Romel Baoayan</h3>
+
+              <h3>Characteristics: sheer, coarse, soft</h3>
+              <h3>Fabric: worsted wool</h3>
+            </div>
           </div>
           <div className="grid-2-col">
             <img src={img4} alt="hero-img" />
+            <div className="overlay-gallery">
+              <h3 className="gallery-text">Design by: Romel Baoayan</h3>
+
+              <h3>Characteristics: soft, airy, warm</h3>
+              <h3>Fabric: cashmere</h3>
+            </div>
           </div>
           <div className="grid-2-col">
             <img src={img5} alt="hero-img" />
+            <div className="overlay-gallery">
+              <h3 className="gallery-text">Design by: Romel Baoayan</h3>
+
+              <h3>Characteristics: warm, lightweight</h3>
+              <h3>Fabric: cashmere</h3>
+            </div>
           </div>
           <div className="grid-2-col">
             <img src={img6} alt="hero-img" />
+            <div className="overlay-gallery">
+              <h3 className="gallery-text">Design by: Romel Baoayan</h3>
+
+              <h3>Characteristics: sheer, coarse, soft</h3>
+              <h3>Fabric: cotton tulle</h3>
+            </div>
           </div>
           <div className="grid-2-col">
             <img src={img7} alt="hero-img" />
+            <div className="overlay-gallery">
+              <h3 className="gallery-text">Design by: Romel Baoayan</h3>
+
+              <h3>Characteristics: soft, airy, warm</h3>
+              <h3>Fabric: cashmere</h3>
+            </div>
           </div>
           <div className="grid-2-col">
             <img src={img8} alt="hero-img" />
+            <div className="overlay-gallery">
+              <h3 className="gallery-text">Design by: Romel Baoayan</h3>
+
+              <h3>Characteristics: soft, airy, warm</h3>
+              <h3>Fabric: cotton tulle</h3>
+            </div>
           </div>
         </div>
       </div>

@@ -21,7 +21,9 @@ const Footer = () => {
                 <div className="icon-wrapper">
                   <img className="icon" src={location} alt="location" />
                 </div>
-                <h3>56 10th Ave, Cubao, Quezon City, 1109 Metro Manila</h3>
+                <h3 className="color-h3">
+                  56 10th Ave, Cubao, Quezon City, 1109 Metro Manila
+                </h3>
               </div>
             </a>
             <a className="footer-a" href="mailto: figura@gmail.com">
@@ -29,7 +31,7 @@ const Footer = () => {
                 <div className="icon-wrapper">
                   <img className="icon" src={email} alt="email" />
                 </div>
-                <h3>Figura@gmail.com</h3>
+                <h3 className="color-h3">Figura@gmail.com</h3>
               </div>
             </a>
           </div>

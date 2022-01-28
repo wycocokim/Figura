@@ -120,7 +120,9 @@ const Appointment = () => {
               </div>
             </div>
 
-            <button onClick={createUser}>Submit</button>
+            <button className="appointment-btn" onClick={createUser}>
+              Submit
+            </button>
           </div>
           {/* <div>
             {listOfUsers.map((user) => {
